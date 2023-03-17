@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Create order</title>
+    <title>L'ultima Cena Pizzeria! - Update Ingredient</title>
   </head>
 
   <body>
@@ -45,43 +45,68 @@
           <li class="nav-item">
             <a class="nav-link" href="/app/beverage/beverages.html">Beverages</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/app/report/report.html">Report</a>
-          </li>
         </ul>
       </nav>
     </header>
 
+    <!-- FORM PART -->
+
     <div class="container">
-        <div class="jumbotron">
-            <h2 class="text-center">Report!</h2>
-            <template id="ingredient-report-template">            
-                <div class="ingredient-most-requested">
-                    <h3> Ingredient most requested: </h3>
-                    <p>Ingredient: {{most_requested_ingredient.ingredient}}</p>
-                    <p>Times requested: {{most_requested_ingredient.requested_times}}</p>
-                </div>
-                <div class="month-highest-revenue">
-                    <h3> Month with the most revenue: </h3>
-                    <p>Month: {{month_with_the_higest_revenue.month}}</p>
-                    <p>Total: {{month_with_the_higest_revenue.revenue}}</p>
-                </div>
-                <div class="best-clients">
-                    <h3> Best Clients: </h3>
-                    <h5>First:</h5>
-                    <p>Name: {{best_clients.first.name}}</p>
-                    <p>Total: {{best_clients.first.total}}</p>
-                    <h5>Second:</h5>
-                    <p>Name: {{best_clients.second.name}}</p>
-                    <p>Total: {{best_clients.second.total}}</p>
-                    <h5>Third:</h5>
-                    <p>Name: {{best_clients.third.name}}</p>
-                    <p>Total: {{best_clients.third.total}}</p>
-                </div>
-            </template>
-        </div>
+      <!-- Notification Area -->
+
+      <div id="size-alert" class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Great!</h4>
+        <p>Your size was updated successfully</p>
+      </div>
+
+      <div class="jumbotron">
+        <h2 class="text-center">Update Size!</h2>
+
+        <form id="size-form">
+          <!-- INGREDIENT DATA -->
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">ID: </label>
+            <div class="col-sm-10">
+              <input id="_id" disabled name="_id" type="text" class="form-control" placeholder="ID" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Name: </label>
+            <div class="col-sm-10">
+              <input id="name" required name="name" type="text" class="form-control" placeholder="Name" />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Price: </label>
+            <div class="col-sm-10">
+              <input
+                id="price"
+                required
+                name="price"
+                type="number"
+                step="0.01"
+                min="0"
+                max="10"
+                class="form-control"
+                placeholder="Price"
+              />
+            </div>
+          </div>
+
+          <!-- ingredient BUTTON -->
+
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning btn-lg">Submit</button>
+          </div>
+        </form>
+      </div>
     </div>
 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -97,12 +122,13 @@
       integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
       crossorigin="anonymous"
     ></script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.js"
       integrity="sha256-ILqMXUXPam8LdBwbq5W6r1m0NxeP8ydLFqrYN+bMCeI="
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/report/report.js"></script>
+    <script src="/js/size/update-size.js"></script>
   </body>
 </html>
