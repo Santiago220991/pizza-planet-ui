@@ -42,7 +42,7 @@ ingredientForm.submit(event => {
 
     event.preventDefault();
     event.currentTarget.reset();
-    window.location.href = '/app/ingredient/ingredients.html';
+    setTimeout(() => window.location.href = '/app/ingredient/ingredients.html', 3000);
 });
 
 /**
