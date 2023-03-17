@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="/css/styles.css" />
 
-    <title>L'ultima Cena Pizzeria! - Ingredients</title>
+    <title>L'ultima Cena Pizzeria! - Create order</title>
   </head>
 
   <body>
@@ -48,56 +48,43 @@
           <li class="nav-item">
             <a class="nav-link" href="/app/report/report.html">Report</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/app/report/report.html">Report</a>
+          </li>
         </ul>
       </nav>
     </header>
 
-    <!-- TABLE -->
-
     <div class="container">
-      <div class="jumbotron">
-        <div id="ingredient-list">
-          <h2 class="text-center">Ingredients</h2>
-          <table id="ingredients" class="table bg-white table-bordered table-hover">
-            <thead class="thead-dark">
-              <tr class="d-flex">
-                <th class="col-2 text-center">ID</th>
-                <th class="col-4 text-center">Name</th>
-                <th class="col-3 text-center">Price</th>
-                <th class="col-3 text-center">Actions</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+        <div class="jumbotron">
+            <h2 class="text-center">Report!</h2>
+            <template id="ingredient-report-template">            
+                <div class="ingredient-most-requested">
+                    <h3> Ingredient most requested: </h3>
+                    <p>Ingredient: {{most_requested_ingredient.ingredient}}</p>
+                    <p>Times requested: {{most_requested_ingredient.requested_times}}</p>
+                </div>
+                <div class="month-highest-revenue">
+                    <h3> Month with the most revenue: </h3>
+                    <p>Month: {{month_with_the_higest_revenue.month}}</p>
+                    <p>Total: {{month_with_the_higest_revenue.revenue}}</p>
+                </div>
+                <div class="best-clients">
+                    <h3> Best Clients: </h3>
+                    <h5>First:</h5>
+                    <p>Name: {{best_clients.first.name}}</p>
+                    <p>Total: {{best_clients.first.total}}</p>
+                    <h5>Second:</h5>
+                    <p>Name: {{best_clients.second.name}}</p>
+                    <p>Total: {{best_clients.second.total}}</p>
+                    <h5>Third:</h5>
+                    <p>Name: {{best_clients.third.name}}</p>
+                    <p>Total: {{best_clients.third.total}}</p>
+                </div>
+            </template>
         </div>
-
-        <div class="text-center">
-          <a class="btn btn-warning btn-lg add-ingredient" href="/app/ingredient/add-ingredient.html"
-            >Add New Ingredient</a
-          >
-        </div>
-      </div>
     </div>
 
-    <template id="ingredient-item-template">
-      <tr class="d-flex">
-        <td class="col-2 text-center">{{_id}}</td>
-        <td class="col-4">{{name}}</td>
-        <td class="col-3">${{price}}</td>
-        <td class="col-3 text-center">
-          <div class="text-center">
-            <a
-              class="btn btn-success btn-sm update-ingredient"
-              href="/app/ingredient/update-ingredient.html?_id={{_id}}"
-              >Update</a
-            >
-          </div>
-        </td>
-      </tr>
-    </template>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
@@ -119,6 +106,6 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="/js/ingredient/ingredient.js"></script>
+    <script src="/js/report/report.js"></script>
   </body>
 </html>
